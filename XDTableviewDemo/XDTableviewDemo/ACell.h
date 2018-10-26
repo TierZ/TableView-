@@ -7,7 +7,14 @@
 //
 
 #import "XDTableBaseCell.h"
+@class ACell;
+@protocol ACellClickDelegate <NSObject>
+-(void)btnClick:(ACell*)cell;
+@end
+
+
 
 @interface ACell : XDTableBaseCell
+@property(nonatomic, weak) id<ACellClickDelegate> clickDelegate;
 
 @end

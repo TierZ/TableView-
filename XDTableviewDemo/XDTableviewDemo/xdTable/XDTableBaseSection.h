@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class XDBaseCellModel,XDTableBaseView;
+@class XDBaseCellModel,XDTableBaseView,XDTableBaseCell;
 @interface XDTableBaseSection :  NSObject
 @property (nonatomic,strong)NSMutableArray <XDBaseCellModel*>* viewModels;
 +(NSDictionary<NSString*,NSString*>*)CellClassWithCellModel;
 - (id)objectForSelectRowIndex:(NSInteger)rowIndex;
-
+-(void)bindCell:(XDTableBaseCell*)cell indexPath:(NSIndexPath*)indexPath;
 @end

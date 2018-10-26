@@ -102,12 +102,12 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    id viewModel = self.sections[indexPath.section].viewModels[indexPath.row];
+    XDTableBaseSection * section = self.sections[indexPath.section];
+    id viewModel = section.viewModels[indexPath.row];
     XDTableBaseCell * cell = [tableView dequeueReusableCellWithIdentifier:[self identifierWithViewModel:viewModel] forIndexPath:indexPath];
-    
-//    XDTableBaseCell * cell = [tableView dequeueReusableCellWithIdentifier:[self identifierWithViewModel:viewModel] forIndexPath:indexPath];
-    cell.contentView.backgroundColor = [UIColor blueColor];
+    cell.contentView.backgroundColor = [UIColor whiteColor];
     [cell setCellData:viewModel];
+    [section bindCell:cell indexPath:indexPath];
     return cell;
 }
 

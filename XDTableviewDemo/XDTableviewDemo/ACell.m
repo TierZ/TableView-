@@ -70,7 +70,9 @@
 }
 
 -(void)click:(UIButton*)sender{
-    
+    if (self.clickDelegate&&[self.clickDelegate respondsToSelector:@selector(btnClick:)]) {
+        [self.clickDelegate btnClick:self];
+    }
 }
 
 #pragma mark

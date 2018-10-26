@@ -15,7 +15,7 @@
 #define kScreenHeight    [UIScreen mainScreen].bounds.size.height
 
 
-@interface ViewController ()<XDTableBaseViewDelegate>
+@interface ViewController ()<XDTableBaseViewDelegate,refreshCellDelegate>
 @property (nonatomic,strong)SectionA * aSection;
 @end
 
@@ -33,7 +33,6 @@
     
     
   
-    
     __weak typeof(table)weakTable = table;
     __weak typeof(self)weakSelf = self;
     table.block = ^(XDTableRefreshType refreshStyle) {
@@ -79,10 +78,13 @@
 -(void)xd_tableView:(XDTableBaseView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath section:(XDTableBaseSection *)section withObject:(id)obj{
     NSLog(@"obj = %@",obj);
 }
-
+-(void)refreshCell{
+    NSLog(@"刷新cell");
+}
 -(SectionA *)aSection{
     if (!_aSection) {
         _aSection = [[SectionA alloc]init];
+        _aSection.delegate = self;
     }
     return _aSection;
 }

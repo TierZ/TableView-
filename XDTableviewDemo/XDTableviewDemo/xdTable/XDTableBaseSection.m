@@ -25,6 +25,9 @@
 - (id)objectForSelectRowIndex:(NSInteger)rowIndex{
     return nil;
 }
+-(void)bindCell:(XDTableBaseCell *)cell indexPath:(NSIndexPath *)indexPath{
+    
+}
 
 
 #pragma mark getter

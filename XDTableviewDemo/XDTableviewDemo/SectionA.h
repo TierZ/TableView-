@@ -7,6 +7,9 @@
 //
 
 #import "XDTableBaseSection.h"
-
+@protocol refreshCellDelegate <NSObject>
+-(void)refreshCell;
+@end
 @interface SectionA : XDTableBaseSection
+@property(nonatomic, weak) id<refreshCellDelegate> delegate;
 @end
