@@ -41,7 +41,7 @@
                         
                         };
     CGSize size=[a.title boundingRectWithSize:CGSizeMake(200, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
-    self.title.frame = CGRectMake(0, 10, 200, size.height);
+    self.title.frame = CGRectMake(10, 10, 200, size.height);
     
 }
 +(CGFloat)cellHeightWithCellData:(id)cellData{

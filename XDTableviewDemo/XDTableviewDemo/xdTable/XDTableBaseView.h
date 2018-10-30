@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XDTableBaseSection.h"
 #import "MJRefresh.h"
+#import "UIView+NoDataView.h"
 
 typedef NS_ENUM(NSInteger, XDTableRefreshType) {
     XDTableRefreshTypeNew = 0,
@@ -37,3 +38,7 @@ typedef void(^RefreshListBlock)(XDTableRefreshType refreshStyle);
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style showRefresh:(BOOL)showRefresh;
 
 @end
+
+
+
+
